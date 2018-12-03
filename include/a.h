@@ -1,3 +1,6 @@
+#ifndef A_H
+#define A_H
+
 struct A {
     A();
     ~A();
@@ -11,3 +14,5 @@ struct B {
     
     int* p;
 };
+
+#endif
