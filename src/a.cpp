@@ -1,7 +1,8 @@
 #include "a.h"
 #include <iostream>
 
-A::A() : p(new int[10]) {
+A::A()
+    : p{new int[10]} {
     std::cout<<"construction of A begins" << std::endl;
     throw std::exception();
     std::cout<<"construction of A finished" << std::endl;
@@ -15,13 +16,11 @@ A::~A() {
 
 B::B()
     try
-    : p(new int[10])
-    {
+    : p{new int[10]} {
         std::cout<<"construction of B begins" << std::endl;
         throw std::exception();
         std::cout<<"construction of B finished" << std::endl;
-    }
-    catch (...) {
+    } catch (...) {
         std::cout << "Got an exception in B constructor!" << std::endl;
         if (p) {
             std::cout << "clearing the data after construction failed" << std::endl;
